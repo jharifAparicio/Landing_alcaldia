@@ -1,0 +1,76 @@
+---
+// src/components/Testimonios.astro
+const testimonios = [
+  {
+    nombre: "María Flores",
+    rol: "Vecina del Distrito 3",
+    texto:
+      "Por primera vez siento que alguien escucha nuestras necesidades. Las alarmas barriales que proponen nos cambiarán la vida.",
+    imagen:
+      "https://ui-avatars.com/api/?name=Maria+Flores&background=random&color=fff&size=150",
+  },
+  {
+    nombre: "Carlos Mendoza",
+    rol: "Comerciante del Mercado Central",
+    texto:
+      "El plan 'Sucre Emprende' es exactamente lo que los pequeños negocios necesitamos para salir adelante y reactivar nuestra economía.",
+    imagen:
+      "https://ui-avatars.com/api/?name=Carlos+Mendoza&background=random&color=fff&size=150",
+  },
+  {
+    nombre: "Ana Velasco",
+    rol: "Estudiante Universitaria",
+    texto:
+      "La propuesta de internet gratuito en las plazas y apoyo tecnológico demuestra que por fin piensan en el futuro de los jóvenes.",
+    imagen:
+      "https://ui-avatars.com/api/?name=Ana+Velasco&background=random&color=fff&size=150",
+  },
+];
+---
+
+<section id="testimonios" class="bg-gray-50 py-20 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">
+        Lo que dice nuestra gente
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        El respaldo de los ciudadanos es nuestra mayor fortaleza para construir
+        la ciudad que merecemos.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        testimonios.map((testimonio) => (
+          <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow relative">
+            <svg
+              class="absolute top-6 left-6 w-10 h-10 text-blue-100"
+              fill="currentColor"
+              viewBox="0 0 32 32"
+              aria-hidden="true"
+            >
+              <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+            </svg>
+            <div class="relative z-10">
+              <p class="text-gray-700 italic mb-6 text-lg">
+                "{testimonio.texto}"
+              </p>
+              <div class="flex items-center gap-4">
+                <img
+                  src={testimonio.imagen}
+                  alt={`Foto de ${testimonio.nombre}`}
+                  class="w-14 h-14 rounded-full object-cover shadow-sm border-2 border-white"
+                />
+                <div>
+                  <h4 class="font-bold text-gray-900">{testimonio.nombre}</h4>
+                  <p class="text-sm text-gray-500">{testimonio.rol}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

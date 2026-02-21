@@ -1,11 +1,174 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import CardPropuesta from "../components/CardPropuesta.astro";
+import Footer from "../components/Footer.astro";
+import SobreMi from "../components/SobreMi.astro";
+import Testimonios from "../components/Testimonios.astro";
+import RedesSociales from "../components/RedesSociales.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Candidato 2026 - Sucre">
+  <Navbar />
+  <Hero />
+
+  <section id="propuestas" class="max-w-7xl mx-auto px-4 py-20 relative">
+    <h2 class="text-3xl font-bold text-center mb-12">Nuestras Propuestas</h2>
+
+    <div class="relative max-w-full group">
+      <!-- Botón Anterior -->
+      <button
+        id="prevBtn"
+        class="absolute left-0 top-1/2 -translate-y-1/2 -ml-2 sm:-ml-6 bg-white text-gray-800 rounded-full p-3 shadow-lg z-10 hover:bg-gray-100 focus:outline-none hidden sm:block opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5L8.25 12l7.5-7.5"></path>
+        </svg>
+      </button>
+
+      <!-- Contenedor del Carrusel -->
+      <div
+        id="carousel"
+        class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8 hide-scrollbar px-2 md:px-4 py-4"
+      >
+        <div class="snap-center shrink-0 w-[280px] sm:w-[350px]">
+          <CardPropuesta
+            title="Seguridad Total"
+            description="Implementación de centros de monitoreo inteligentes y alarmas barriales en todos los distritos."
+            image="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=800&auto=format&fit=crop"
+          />
+        </div>
+        <div class="snap-center shrink-0 w-[280px] sm:w-[350px]">
+          <CardPropuesta
+            title="Obras Modernas"
+            description="Mejoramiento de vías, pavimentación y creación de espacios verdes para las familias."
+            image="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop"
+          />
+        </div>
+        <div class="snap-center shrink-0 w-[280px] sm:w-[350px]">
+          <CardPropuesta
+            title="Sucre Emprende"
+            description="Créditos municipales y capacitación técnica para jóvenes profesionales y emprendedores."
+            image="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=800&auto=format&fit=crop"
+          />
+        </div>
+        <div class="snap-center shrink-0 w-[280px] sm:w-[350px]">
+          <CardPropuesta
+            title="Salud para Todos"
+            description="Nuevos centros de salud 24/7 y farmacias municipales bien equipadas."
+            image="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop"
+          />
+        </div>
+        <div class="snap-center shrink-0 w-[280px] sm:w-[350px]">
+          <CardPropuesta
+            title="Educación del Futuro"
+            description="Internet gratuito de alta velocidad y equipamiento tecnológico para escuelas públicas."
+            image="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop"
+          />
+        </div>
+        <div class="snap-center shrink-0 w-[280px] sm:w-[350px]">
+          <CardPropuesta
+            title="Transporte Eficiente"
+            description="Reordenamiento vehicular, paradas inteligentes y nuevas rutas seguras y modernas."
+            image="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?q=80&w=800&auto=format&fit=crop"
+          />
+        </div>
+        <div class="snap-center shrink-0 w-[280px] sm:w-[350px]">
+          <CardPropuesta
+            title="Sucre Turística"
+            description="Puesta en valor del patrimonio histórico y cultural para potenciar la economía local."
+            image="https://correodelsur.com/ecos/20150503/barrios-tradicionales-sucrenses.html"
+          />
+        </div>
+        <div class="snap-center shrink-0 w-[280px] sm:w-[350px]">
+          <CardPropuesta
+            title="Ciudad Limpia"
+            description="Modernización del sistema de recolección de basura e impulso al reciclaje ciudadano."
+            image="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=800&auto=format&fit=crop"
+          />
+        </div>
+        <div class="snap-center shrink-0 w-[280px] sm:w-[350px]">
+          <CardPropuesta
+            title="Deporte y Cultura"
+            description="Construcción de modernos polideportivos y centros culturales en cada distrito."
+            image="https://images.unsplash.com/photo-1526676037777-05a232554f77?q=80&w=800&auto=format&fit=crop"
+          />
+        </div>
+        <div class="snap-center shrink-0 w-[280px] sm:w-[350px]">
+          <CardPropuesta
+            title="Gobierno Transparente"
+            description="Digitalización total de trámites municipales para eliminar la burocracia y corrupción."
+            image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop"
+          />
+        </div>
+      </div>
+
+      <!-- Botón Siguiente -->
+      <button
+        id="nextBtn"
+        class="absolute right-0 top-1/2 -translate-y-1/2 -mr-2 sm:-mr-6 bg-white text-gray-800 rounded-full p-3 shadow-lg z-10 hover:bg-gray-100 focus:outline-none hidden sm:block opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <style>
+    /* Ocultar scrollbar para un look más limpio */
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const carousel = document.getElementById("carousel");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+
+      if (carousel && prevBtn && nextBtn) {
+        prevBtn.addEventListener("click", () => {
+          const scrollAmount = carousel.clientWidth * 0.8;
+          carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        });
+
+        nextBtn.addEventListener("click", () => {
+          const scrollAmount = carousel.clientWidth * 0.8;
+          carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        });
+      }
+    });
+  </script>
+
+  <Testimonios />
+  <SobreMi />
+  <RedesSociales />
+  <Footer />
 </Layout>
